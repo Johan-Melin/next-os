@@ -4,7 +4,7 @@ export default function AppIcon({ Icon, title }: { Icon: IconType, title?: strin
   return (
     <div 
       className="flex flex-col items-center justify-center h-14 w-14" 
-      style={{ color: "var(--foreground)", backgroundColor: "var(--background)" }}
+      style={{ color: "var(--foreground)"}}
     >
       <Icon size={24} />
       <p className="text-xs">{title}</p>

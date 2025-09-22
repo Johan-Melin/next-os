@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import AppIcon from "@/components/AppIcon";
+import { FiInfo, FiGlobe, FiGrid, FiSettings } from "react-icons/fi";
+
+const dockApps = [
+  { Icon: FiInfo, title: "info" },
+  { Icon: FiGlobe, title: "news" },
+  { Icon: FiGrid, title: "program" },
+  { Icon: FiSettings, title: "settings" },
+];
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,6 +37,14 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <div 
+          className="fixed bottom-0 left-0 right-0 flex justify-around border-t border-neutral-800" 
+          style={{ backgroundColor: "var(--background)"}}
+        >
+          {dockApps.map((app) => (
+            <AppIcon key={app.title} Icon={app.Icon} title={app.title} />
+          ))}
+        </div>
       </body>
     </html>
   );
