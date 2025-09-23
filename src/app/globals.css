@@ -16,6 +16,8 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --window-panel: #111111;
+    --window-background: #171717;
   }
 }
 
