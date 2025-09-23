@@ -19,7 +19,7 @@ export default function Home() {
         <AppIcon key={app.title} Icon={app.Icon} title={app.title} onClick={() => setOpenWindow(app.title)} />
       ))}
       {openWindow && <Window title={openWindow} onClose={() => setOpenWindow(null)} />}
-      <Dock />
+      <Dock setOpenWindow={setOpenWindow} />
     </div>
   );
 }
