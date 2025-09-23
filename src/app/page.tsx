@@ -11,10 +11,7 @@ export default function Home() {
   const [openWindow, setOpenWindow] = useState<string | null>(null);
 
   return (
-    <div 
-      className="flex flex-wrap content-start gap-4 p-4 h-screen overflow-auto"
-      style={{ color: "var(--foreground)", backgroundColor: "var(--background)" }}
-    >
+    <div className="flex flex-wrap content-start gap-4 p-4 h-screen overflow-auto">
       {apps && apps.map((app) => (
         <AppIcon key={app.title} Icon={app.Icon} title={app.title} onClick={() => setOpenWindow(app.title)} />
       ))}
