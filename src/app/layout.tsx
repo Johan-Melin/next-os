@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-import AppIcon from "@/components/AppIcon";
-import { dockApps } from "@/data/apps";
+import Dock from "@/components/Dock";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,12 +30,7 @@ export default function RootLayout({
       >
         {children}
 
-        {/* Dock */}
-        <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 flex justify-center items-end p-2 rounded-2xl backdrop-blur-lg border border-white/20">
-          {dockApps.map((app) => (
-            <AppIcon key={app.title} Icon={app.Icon} title={app.title} />
-          ))}
-        </div>
+        <Dock />
       </body>
     </html>
   );
