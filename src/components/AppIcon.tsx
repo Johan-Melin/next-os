@@ -1,6 +1,12 @@
 import { IconType } from "react-icons";
 
-export default function AppIcon({ Icon, title }: { Icon: IconType, title?: string }) {
+interface AppIconProps {
+  Icon: IconType;
+  title?: string;
+  target?: React.ReactNode;
+}
+
+export default function AppIcon({ Icon, title, target }: AppIconProps) {
   return (
     <div 
       className="flex flex-col items-center justify-center h-14 w-14" 
