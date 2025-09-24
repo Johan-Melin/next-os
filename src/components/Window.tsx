@@ -1,19 +1,19 @@
-import React from 'react';
+import React, { ComponentType } from 'react';
 import { FiX } from 'react-icons/fi';
-import { AppItem } from '../data/apps';
 
-type WindowProps = {
+interface WindowProps {
+  component: ComponentType;
+  title: string;
   onClose: () => void;
-  app: AppItem;
-};
+}
 
-export default function Window({ onClose, app }: WindowProps) {
+export default function Window({ component: Component, title, onClose }: WindowProps) {
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
       <div className="w-full max-w-4xl max-h-[80vh] overflow-hidden border border-window-border">
         <div 
           className="px-4 py-2 flex justify-between items-center bg-window-panel">
-          <h2 className="text-xl font-semibold">{app.title}</h2>
+          <h2 className="text-xl font-semibold">{title}</h2>
           <button 
             onClick={onClose}
             className="text-gray-400 hover:text-white p-2 rounded-full hover:bg-gray-700"
@@ -26,7 +26,7 @@ export default function Window({ onClose, app }: WindowProps) {
         {/* Content */}
         <div 
           className="p-4 overflow-y-auto flex-grow bg-window-background">
-          {app.component ? React.createElement(app.component) : null}
+          <Component />
         </div>
       </div>
     </div>
