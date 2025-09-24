@@ -10,9 +10,9 @@ interface WindowProps {
 export default function Window({ component: Component, title, onClose }: WindowProps) {
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-      <div className="w-full max-w-4xl max-h-[80vh] overflow-hidden border border-window-border">
+      <div className="w-full max-w-4xl max-h-[80vh] overflow-hidden border border-border">
         <div 
-          className="px-4 py-2 flex justify-between items-center bg-window-panel">
+          className="px-4 py-2 flex justify-between items-center bg-border">
           <h2 className="text-xl font-semibold">{title}</h2>
           <button 
             onClick={onClose}
@@ -25,7 +25,7 @@ export default function Window({ component: Component, title, onClose }: WindowP
         
         {/* Content */}
         <div 
-          className="p-4 overflow-y-auto flex-grow bg-window-background">
+          className="p-4 overflow-y-auto flex-grow bg-background">
           <Component />
         </div>
       </div>

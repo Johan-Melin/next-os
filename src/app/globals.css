@@ -1,19 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #333333;
-  --foreground: #ededed;
-  --window-panel: #111111;
-  --window-background: #171717;
-  --window-border: #3b3b3b;
+  --background: #011627;
+  --foreground: #F7FAFC;
+  --border: #1F2A44;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-window-panel: var(--window-panel);
-  --color-window-background: var(--window-background);
-  --color-window-border: var(--window-border);
+  --color-border: var(--border);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
