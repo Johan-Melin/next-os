@@ -1,19 +1,25 @@
 import { FC } from 'react';
+import { AppItem } from '@/data/apps';
+import AppIcon from './AppIcon';
 
 interface FolderProps {
-  text: string;
+  app: AppItem[];
 }
 
-const Folder: FC<FolderProps> = ({ text }) => {
+const Folder: FC<FolderProps> = ({ app }) => {
   return (
-    <div>{text}</div>
+    <div>
+      {app.map((app) => 
+        <AppIcon key={app.title} Icon={app.Icon} title={app.title} />
+      )}
+    </div>
   );
 };
 
 export default Folder;
 
 // This is a factory function to create folder components
-export const createFolder = (text: string) => {
-  const FolderComponent: FC = () => <Folder text={text} />;
+export const createFolder = ( app: AppItem[]) => {
+  const FolderComponent: FC = () => <Folder app={app} />;
   return FolderComponent;
 };

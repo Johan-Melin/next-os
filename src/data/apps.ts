@@ -1,5 +1,5 @@
 import { IconType } from 'react-icons';
-import { FiInfo, FiGlobe, FiGrid, FiSettings, FiFolder } from "react-icons/fi";
+import { FiInfo, FiGlobe, FiGrid, FiSettings, FiFolder, FiType } from "react-icons/fi";
 import dynamic from 'next/dynamic';
 import { createFolder } from '@/components/Folder';
 
@@ -10,13 +10,17 @@ const Settings = dynamic(() => import('../content/Settings'), { ssr: false });
 const TextEditor = dynamic(() => import('../content/program/TextEditor'), { ssr: false });
 export type RegistryKey = keyof typeof registry;
 
-interface AppItem {
+export interface AppItem {
   Icon: IconType;
   title: string;
   component: RegistryKey;
 }
 
-const programsFolder = createFolder("programs");
+const programsApps: AppItem[] = [
+  { Icon: FiType, title: "text editor", component: "textEditor", },
+]
+
+const programsFolder = createFolder(programsApps);
 
 export const registry = {
   "about": About,
