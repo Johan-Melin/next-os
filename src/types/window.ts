@@ -1,8 +1,7 @@
 import { ReactNode } from "react"
+import { DesktopItem } from "./desktop"
 
-export interface WindowItem {
-  id: string
-  title: string
+export interface WindowItem extends DesktopItem {
   content?: ReactNode
 }
 

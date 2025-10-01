@@ -1,12 +1,6 @@
 import DesktopIcon from "./DesktopIcon";
-import { DesktopItem } from "@/types/desktop";
+import { desktopItems } from "@/config/desktop";
 import WindowManager from "./WindowManager";
-
-const desktopItems: DesktopItem[] = [
-  { id: "documents", name: "Documents", icon: "📁" },
-  { id: "settings", name: "Settings", icon: "⚙️" },
-  { id: "about", name: "About", icon: "ℹ️" },
-]
 
 function Desktop() {
   return (
