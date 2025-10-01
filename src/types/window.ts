@@ -8,4 +8,6 @@ export interface WindowItem {
 
 export interface WindowContextType {
   currentWindow: WindowItem | null
+  openWindow: (window: WindowItem) => void
+  closeWindow: () => void
 }

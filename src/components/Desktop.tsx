@@ -5,7 +5,7 @@ import WindowManager from "./WindowManager";
 const desktopItems: DesktopItem[] = [
   { id: "documents", name: "Documents", icon: "📁" },
   { id: "settings", name: "Settings", icon: "⚙️" },
-  { id: "terminal", name: "Terminal", icon: "💻" },
+  { id: "about", name: "About", icon: "ℹ️" },
 ]
 
 function Desktop() {

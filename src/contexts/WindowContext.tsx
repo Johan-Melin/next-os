@@ -8,10 +8,20 @@ const WindowContext = createContext<WindowContextType | undefined>(undefined)
 export function WindowProvider({ children }: { children: ReactNode }) {
   const [currentWindow, setCurrentWindow] = useState<WindowItem | null>(null)
 
+  const openWindow = (window: WindowItem) => {
+    setCurrentWindow(window);
+  }
+
+  const closeWindow = () => {
+    setCurrentWindow(null);
+  }
+
   return (
     <WindowContext.Provider
       value={{
         currentWindow,
+        openWindow,
+        closeWindow,
       }}
     >
       {children}

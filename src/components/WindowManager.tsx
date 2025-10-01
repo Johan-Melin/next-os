@@ -3,7 +3,7 @@
 import { useWindow } from "@/contexts/WindowContext";
 
 export default function WindowManager() {
-  const { currentWindow } = useWindow()
+  const { currentWindow, closeWindow } = useWindow()
 
   if (!currentWindow) {
     return null
@@ -14,6 +14,10 @@ export default function WindowManager() {
       <div className="w-full max-w-4xl max-h-[80vh] overflow-hidden border border-muted">
         <div className="px-4 py-2 flex justify-between items-center">
           <h2 className="text-xl font-semibold">{currentWindow?.title}</h2>
+          <button 
+            onClick={closeWindow}
+            className="text-xl font-semibold"
+          >x</button>
         </div>
         
         <div className="p-4 bg-muted">
