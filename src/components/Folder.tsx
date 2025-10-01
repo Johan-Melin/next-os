@@ -1,4 +1,3 @@
-import React from 'react'
 import { DesktopItem } from '@/types/desktop'
 import DesktopIcon from './DesktopIcon'
 

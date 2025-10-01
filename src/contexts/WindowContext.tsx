@@ -7,13 +7,27 @@ const WindowContext = createContext<WindowContextType | undefined>(undefined)
 
 export function WindowProvider({ children }: { children: ReactNode }) {
   const [currentWindow, setCurrentWindow] = useState<WindowItem | null>(null)
+  const [windowHistory, setWindowHistory] = useState<WindowItem[]>([])
 
   const openWindow = (window: WindowItem) => {
+    setWindowHistory(prevHistory => 
+      currentWindow ? [...prevHistory, currentWindow] : prevHistory
+    );
     setCurrentWindow(window);
+  }
+
+  const goBack = () => {
+    if (windowHistory.length > 0) {
+      setCurrentWindow(windowHistory[windowHistory.length - 1]);
+      setWindowHistory(windowHistory.slice(0, windowHistory.length - 1));
+    } else {
+      closeWindow();
+    }
   }
 
   const closeWindow = () => {
     setCurrentWindow(null);
+    setWindowHistory([]);
   }
 
   return (
@@ -21,6 +35,7 @@ export function WindowProvider({ children }: { children: ReactNode }) {
       value={{
         currentWindow,
         openWindow,
+        goBack,
         closeWindow,
       }}
     >
