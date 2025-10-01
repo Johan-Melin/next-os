@@ -7,3 +7,10 @@ export const desktopItems: DesktopItem[] = [
   { id: "settings", name: "Settings", icon: "⚙️" },
   { id: "about", name: "About", icon: "ℹ️" },
 ] as const; // as const to make root ids unique. make sure child items[] ids are unique
+
+export const dockItems: DesktopItem[] = [
+  { id: "portfolio", name: "Portfolio", items: [
+    { id: "portfolio-site", name: "Portfolio Site", icon: "🎨" },
+  ] },
+  { id: "settings", name: "Settings", icon: "⚙️" },
+] as const; // as const to make root ids unique. make sure child items[] ids are unique

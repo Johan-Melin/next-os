@@ -3,6 +3,7 @@ export interface DesktopItem {
   name: string
   icon?: string
   items?: DesktopItem[]
+  variant?: string
 }
 
 export function isFolder(item: DesktopItem): item is DesktopItem {
