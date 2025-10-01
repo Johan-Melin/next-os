@@ -1,5 +1,6 @@
 import DesktopIcon from "./DesktopIcon";
 import { DesktopItem } from "@/types/desktop";
+import WindowManager from "./WindowManager";
 
 const desktopItems: DesktopItem[] = [
   { id: "documents", name: "Documents", icon: "📁" },
@@ -13,6 +14,7 @@ function Desktop() {
       {desktopItems.map((item) => (
         <DesktopIcon key={item.id} item={item} />
       ))}
+      <WindowManager />
     </div>
   )
 }

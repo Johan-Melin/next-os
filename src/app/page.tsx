@@ -1,7 +1,10 @@
 import Desktop from "@/components/Desktop";
+import { WindowProvider } from "@/contexts/WindowContext";
 
 export default function Home() {
   return (
-    <Desktop />
+    <WindowProvider>
+      <Desktop />
+    </WindowProvider>
   );
 }
