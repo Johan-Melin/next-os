@@ -1,12 +1,22 @@
 'use client'
 
+import React, { useCallback } from 'react'
 import { useWindow } from "@/contexts/WindowContext";
 import { getContent, RegistryKey } from "@/config/contentMapping";
 import Folder from "./Folder";
 import { isFolder } from "@/types/desktop";
 
-export default function WindowManager() {
+const WindowManager = React.memo(function WindowManager() {
   const { currentWindow, goBack, closeWindow } = useWindow()
+
+  // Memoized callbacks
+  const handleClose = useCallback(() => {
+    closeWindow();
+  }, [closeWindow]);
+
+  const handleBack = useCallback(() => {
+    goBack();
+  }, [goBack]);
 
   if (!currentWindow) {
     return null
@@ -19,12 +29,12 @@ export default function WindowManager() {
       <div className="w-full max-w-4xl max-h-[80vh] overflow-hidden border border-muted bg-background">
         <div className="px-4 py-2 flex justify-between items-center">
         <button 
-            onClick={goBack}
+            onClick={handleBack}
             className="text-xl font-semibold px-2 rounded-full hover:bg-muted"
           >{'<'}</button>
           <h2 className="text-xl font-semibold">{currentWindow.name}</h2>
           <button 
-            onClick={closeWindow}
+            onClick={handleClose}
             className="text-xl font-semibold px-2 rounded-full hover:bg-muted"
           >x</button>
         </div>
@@ -38,4 +48,5 @@ export default function WindowManager() {
       </div>
     </div>
   );
-}
+});
+export default WindowManager;
