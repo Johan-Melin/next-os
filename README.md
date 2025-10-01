@@ -15,13 +15,23 @@ A modern, desktop-inspired operating system interface built with Next.js, React,
 ## Features
 
 - Desktop-like window management
-- Responsive design
+- Responsive design with only one window open at a time
+- Navigate to previous folder with the back button
 - Optimized performance with React.memo and useCallback
 - Dynamic content loading
 
 ## Getting Started
 
-1. **Clone the repository**
+### 🚀 Quick Start
+
+#### 1-Click Deploy on Vercel
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https:%2F%2Fgithub.com%2FJohan%2DMelin%2Fnext%2Dos.git)
+
+### Local Development
+
+1. **Use this template**
+   - Click the "Use this template" button above
+   - Or clone the repository:
    ```bash
    git clone https://github.com/Johan-Melin/next-os.git
    cd next-os
