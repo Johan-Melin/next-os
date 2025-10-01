@@ -16,7 +16,7 @@ export default function WindowManager() {
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 backdrop-blur-sm">
-      <div className="w-full max-w-4xl max-h-[80vh] overflow-hidden border border-muted">
+      <div className="w-full max-w-4xl max-h-[80vh] overflow-hidden border border-muted bg-background">
         <div className="px-4 py-2 flex justify-between items-center">
         <button 
             onClick={goBack}
