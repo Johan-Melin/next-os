@@ -2,6 +2,8 @@
 
 A modern, desktop-inspired operating system interface built with Next.js, React, and Tailwind CSS. 
 
+View demo: https://nextos.vercel.app/
+
 ## 📸 Screenshots
 
 <div align="center">
@@ -14,11 +16,12 @@ A modern, desktop-inspired operating system interface built with Next.js, React,
 
 ## Features
 
-- Desktop-like window management
-- Responsive design with only one window open at a time
-- Navigate to previous folder with the back button
+- Icon-based app launcher with OS-inspired interface
+- Responsive design with single-window interface
 - Optimized performance with React.memo and useCallback
-- Dynamic content loading
+- Easy to use
+- Minimalistic starter with example content
+- Cleanup script to start fresh
 
 ## Getting Started
 
@@ -56,6 +59,15 @@ A modern, desktop-inspired operating system interface built with Next.js, React,
    ```
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+5. **Remove default content**
+   ```bash
+   npm run clean
+   # or
+   yarn clean
+   # or
+   pnpm clean
+   ```
 
 ## Customization
 
