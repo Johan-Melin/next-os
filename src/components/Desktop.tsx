@@ -5,7 +5,7 @@ import Dock from "./Dock";
 
 function Desktop() {
   return (
-    <div className="flex flex-col items-start h-screen gap-4 py-3">
+    <div className="flex flex-col content-start h-screen gap-4 py-3 flex-wrap">
       {desktopItems.map((item) => (
         <DesktopIcon key={item.id} item={item} />
       ))}

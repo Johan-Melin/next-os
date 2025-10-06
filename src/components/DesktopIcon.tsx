@@ -21,7 +21,7 @@ function DesktopIcon({ item, variant = '' }: {
       className="flex flex-col items-center justify-center cursor-pointer text-center w-20"
     >
       <div className="mb-1 hover:scale-110 w-12 h-12 flex items-center justify-center text-4xl">{item.icon || '📁'}</div>
-      <span className="text-sm text-center w-full truncate">{item.name}</span>
+      <span className="text-xs text-center w-full truncate">{item.name}</span>
     </div>
   )
 }

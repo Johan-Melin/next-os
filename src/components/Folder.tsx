@@ -3,7 +3,7 @@ import DesktopIcon from './DesktopIcon'
 
 function Folder({ folder }: { folder: DesktopItem }) {
   return (
-    <div>
+    <div className="flex flex-wrap gap-4">
       {folder.items?.map((item) => (
         <DesktopIcon key={item.id} item={item} />
       ))}

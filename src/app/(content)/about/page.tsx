@@ -10,9 +10,9 @@ export default function About() {
           <h2 className="text-lg font-semibold mb-2">System Information</h2>
           <div className="grid grid-cols-2 gap-2 text-sm">
             <div>Version</div>
-            <div className="text-muted-foreground">1.0.0</div>
+            <div className="text-muted-foreground">1.0.1</div>
             <div>Last Updated</div>
-            <div className="text-muted-foreground">Oct 1, 2025</div>
+            <div className="text-muted-foreground">Oct 6, 2025</div>
           </div>
         </div>
       </div>
